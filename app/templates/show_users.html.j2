@@ -1,0 +1,53 @@
+{% extends 'base.html.j2'%}
+
+{% block title %}
+ Pokemon Battles
+{% endblock %}
+
+{% block css%}
+    <link href="static/show_users.css" rel="stylesheet">
+{% endblock%}
+    
+{% block content %}
+    
+    <br>
+    <hr>
+    <div id="header" style="width: 100%">
+    <h1>Who do you want to battle?</h1>
+    </div>
+    <hr>
+    <br>
+
+<div id="box_container" class="d-flex flex-row">
+    {% for user in users %}
+
+        <div class="card" style="width: 18rem;">Hi me here   
+            {% for poke in user.squad%}
+            <div class="row">
+                <div class="col-8">
+                    <img src="{{poke.sprites}}" class="card-img-top" alt="poke sprites">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="card" style="width: 18rem;">  
+                <h5 class="card-title">{{user.first_name}}</h5>
+                <p class="card-text">
+                <br>
+                    <h5>Stats</h5>
+                    <ul>
+                        
+                        <li>Battles: {{user.battles}} </li>                    
+                        <li>Ws: {{user.wins}} </li>
+                        <li>Ls: {{user.losses}} </li>
+                        <li>Ties: {{user.battles - user.wins - user.losses}} </li>
+                                            
+                    </ul>
+                </p>  
+                <button id="button" type="button" class="card-button" onclick="location.href='{{url_for('social.battle', id=user.id)}}'">
+                    Battle!
+                </button>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

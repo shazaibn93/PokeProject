@@ -1,0 +1,74 @@
+.container{
+    width:100vw;
+    height:100vh;
+
+    font-family: 'Quicksand', san-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar{
+    background-image: url('/static/images/pmwp2.jpg');
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.navbar-brand {
+    color: rgb(183, 194, 255);
+}
+
+.collapse {
+    display: flex;
+    float: right;
+}
+
+.nav-link {
+    color:goldenrod;
+    float: right;
+}
+
+body{
+    border:none !important;
+    background-image: url('/static/images/pmwp2.jpg');
+    background-size: cover;
+    background-position:center top;
+    background-attachment: fixed;
+    
+    color:rgb(183, 194, 255)
+}
+
+.card {
+    display:flex;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+    text-align: center;
+    color: goldenrod;
+}
+
+.top {
+    text-align: center;
+    text-shadow: 20px;
+}
+
+.squad {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.whole {
+    display: flex;
+    align-content: center;
+    
+}
+
+ul {
+    list-style-type: none;
+}

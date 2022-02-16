@@ -1,0 +1,35 @@
+{% extends 'base.html.j2' %}
+
+{%block title%}
+    Your Squad
+{%endblock%}
+
+
+{% block content %}
+    {%if team %}
+    <div class="whole">
+    {% for mpoke in team%}
+    <div class="squad">
+        <div class="card" style="width: 18rem;">
+        
+            <div class="card-body">
+                <h5 class="card-title">{{mpoke.name.title()}}</h5>
+                <p class="card-text">
+                    <ul>
+                        <li><img src="{{mpoke.sprites}}" class="card-img-top" alt="mpoke sprites"></li>
+                        <li>ID: {{mpoke.id}}</li>
+                        <li>HP: {{mpoke.hp}}</li>
+                        <li>Defense: {{mpoke.defense}}</li>
+                        <li>Attack: {{mpoke.attack}}</li>
+                        <li>Ability 1: {{mpoke.ability_1}}</li>
+                        <li>Ability 2: {{mpoke.ability_2}}</li>
+                    </ul>
+                </p>
+                <a href="{{url_for('main.remove', id=mpoke.id)}}" class="btn btn-danger mx-3">Delete</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    {% endif %}
+    </div>
+{%endblock%}
